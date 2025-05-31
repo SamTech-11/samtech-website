@@ -38,4 +38,4 @@ online-company-website
 Feel free to fork the repository and submit pull requests for any improvements or features you would like to add.
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the SamTech License - see the LICENSE file for details.
