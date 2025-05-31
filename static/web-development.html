@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web Development | SamTech Digital Agency</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,400|Roboto:400,500&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Roboto', Arial, sans-serif; background: #f7f9fb; margin: 0; }
+    .service-hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      background: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.03);
+      margin: 2rem auto 2rem auto;
+      max-width: 1100px;
+      padding: 2.5rem 1.5rem;
+    }
+    .service-hero img {
+      width: 320px;
+      border-radius: 1rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      object-fit: cover;
+    }
+    .service-hero-content {
+      max-width: 500px;
+    }
+    .service-hero-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #0077b6;
+    }
+    .service-hero-content p {
+      font-size: 1.1rem;
+      color: #222;
+    }
+    .features-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin: 3rem 0;
+    }
+    .feature-card {
+      background: #fff;
+      color: #222;
+      border-radius: 1rem;
+      box-shadow: 0 2px 12px rgba(0,119,182,0.08);
+      padding: 2rem 1.5rem;
+      max-width: 320px;
+      min-width: 220px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .feature-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 8px 24px rgba(0,119,182,0.13);
+    }
+    .feature-card i {
+      font-size: 2.5rem;
+      color: #0077b6;
+      margin-bottom: 1rem;
+    }
+    .cta-section {
+      text-align: center;
+      margin: 3rem 0 2rem 0;
+    }
+    .cta-btn {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: #0077b6;
+      color: #fff;
+      border: none;
+      border-radius: 2rem;
+      font-size: 1.1rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 8px rgba(0,119,182,0.08);
+      cursor: pointer;
+    }
+    .cta-btn:hover {
+      background: #023e8a;
+    }
+    @media (max-width: 900px) {
+      .service-hero { flex-direction: column; text-align: center; }
+      .service-hero img { margin-bottom: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="padding:1.2rem 0; text-align:center; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+      <span style="font-family:'Playfair Display',serif;font-size:2rem;color:#2d3a4b;"><i class="fas fa-gem"></i> SamTech Digital Agency</span>
+    </div>
+  </header>
+  <main>
+    <section class="service-hero">
+      <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=500&q=80" alt="Web Development">
+      <div class="service-hero-content">
+        <h1>Web Development</h1>
+        <p>
+          We craft stunning, high-performance websites and web applications that drive business growth. Our expert team uses the latest technologies to deliver solutions that are fast, secure, and tailored to your unique needs.
+        </p>
+      </div>
+    </section>
+    <section>
+      <div class="features-list">
+        <div class="feature-card">
+          <i class="fas fa-mobile-alt"></i>
+          <h3>Mobile Responsive</h3>
+          <p>Your site looks perfect on every device, from phones to desktops.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-rocket"></i>
+          <h3>Lightning Fast</h3>
+          <p>Optimized for speed and performance to keep your users engaged.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Secure & Reliable</h3>
+          <p>Built with best practices for security and uptime.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-paint-brush"></i>
+          <h3>Custom Design</h3>
+          <p>Unique, on-brand designs that set you apart from the competition.</p>
+        </div>
+      </div>
+    </section>
+    <section class="cta-section">
+      <h2>Ready to start your project?</h2>
+      <a href="index.html#contact" class="cta-btn">Contact Us</a>
+    </section>
+  </main>
+  <footer>
+    <div style="text-align:center;padding:1.5rem 0;color:#888;">&copy; 2025 Dora Digital Agency. All rights reserved.</div>
+  </footer>
+</body>
+</html>

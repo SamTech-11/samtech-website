@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SamTech Digital Agency</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,400|Roboto:400,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background: #f7f9fb;
+            color: #222;
+            margin: 0;
+        }
+        header {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.2rem 0;
+        }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #2d3a4b;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            letter-spacing: 1px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+        nav a {
+            text-decoration: none;
+            color: #2d3a4b;
+            font-weight: 500;
+            transition: color 0.2s;
+            font-size: 1.08rem;
+        }
+        nav a:hover {
+            color: #0077b6;
+        }
+        .hero {
+            background: linear-gradient(120deg, rgba(32,40,80,0.55), rgba(0,119,182,0.35)), url('images/world.jpg') center/cover no-repeat;
+            color: #fff;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+            padding: 3rem 0 2rem 0;
+        }
+        .hero-content > div {
+            flex: 1 1 350px;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: #e0eafc;
+        }
+        .cta-btn {
+            display: inline-block;
+            padding: 0.85rem 2.2rem;
+            background: #0077b6;
+            color: #fff;
+            border: none;
+            border-radius: 2rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(0,119,182,0.08);
+            cursor: pointer;
+        }
+        .cta-btn:hover {
+            background: #023e8a;
+        }
+        .section {
+            padding: 3rem 0;
+            background: #fff;
+            margin-top: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.03);
+        }
+        .section-content {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+        }
+        .section-content img {
+            width: 350px;
+            max-width: 100%;
+            border-radius: 1rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+        }
+        .section-content > div {
+            flex: 1 1 350px;
+        }
+        /* Modern Service Cards */
+        .services-list {
+          display: flex;
+          gap: 2rem;
+          flex-wrap: wrap;
+          justify-content: center;
+          margin-top: 2rem;
+        }
+        .service-card {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background: #fff;
+          border-radius: 1rem;
+          border: 2px solid #e3f0fa;
+          box-shadow: 0 2px 16px rgba(0,119,182,0.07);
+          padding: 2rem 1.5rem;
+          text-align: center;
+          text-decoration: none !important;
+          color: #222;
+          transition: 
+            transform 0.18s, 
+            box-shadow 0.18s, 
+            border-color 0.18s;
+          width: 300px;
+          min-height: 420px;
+          position: relative;
+        }
+        .service-card:hover {
+          transform: translateY(-8px) scale(1.03);
+          box-shadow: 0 8px 32px rgba(0,119,182,0.13);
+          border-color: #0077b6;
+          color: #0077b6;
+        }
+        .service-card img {
+          width: 80px;
+          height: 80px;
+          object-fit: cover;
+          border-radius: 50%;
+          margin-bottom: 1rem;
+          box-shadow: 0 2px 8px rgba(0,119,182,0.10);
+          border: 2px solid #b3e0fc;
+        }
+        .service-card i {
+          font-size: 2rem;
+          color: #0077b6;
+          margin-bottom: 0.7rem;
+        }
+        .service-card h3 {
+          margin: 0.5rem 0 0.7rem 0;
+          font-size: 1.25rem;
+          font-family: 'Playfair Display', serif;
+        }
+        .service-card p {
+          color: #444;
+          font-size: 1rem;
+        }
+        .contact-section form {
+            max-width: 500px;
+            margin: 2rem auto 0 auto;
+            background: #f1f5fa;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 0.7rem;
+            border: 1px solid #bcd0e5;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-family: inherit;
+            background: #fff;
+            resize: vertical;
+        }
+        textarea {
+            min-height: 100px;
+        }
+        footer {
+            background: #22223b;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+            border-radius: 1rem 1rem 0 0;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+        @media (max-width: 900px) {
+            .hero-content, .section-content, .services-list {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .services-list {
+                align-items: stretch;
+            }
+            .about-section { flex-direction: column; gap:2rem; }
+            .about-content { text-align:center !important; }
+            .about-content ul { text-align:center !important; }
+        }
+        @media (max-width: 600px) {
+            .container {
+                width: 98%;
+                padding: 0 0.5rem;
+            }
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .section {
+                padding: 1.5rem 0.5rem;
+            }
+            .service-card {
+                padding: 1.2rem 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <div class="logo" style="font-size:1.25rem;">
+                <i class="fas fa-gem" style="font-size:1.3rem;"></i>
+                <span>SamTech Digital Agency</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container hero-content">
+                <div>
+                    <h1>Elevate Your Business with SamTech</h1>
+                    <p>Expert digital solutions for your growth and success.<br>Partner with us for a brighter future.</p>
+                    <a href="#contact" class="cta-btn">Get Started</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section" style="display:flex;justify-content:center;align-items:center;gap:3rem;max-width:1100px;margin:3rem auto 2rem auto;">
+          <!-- Developer Card -->
+          <div class="dev-card" style="background:linear-gradient(135deg,#f7faff 60%,#e3f0fa 100%);border-radius:1.5rem;box-shadow:0 4px 32px rgba(0,119,182,0.10);padding:2.5rem 2rem;display:flex;flex-direction:column;align-items:center;max-width:340px;flex:1;position:relative;">
+            <span style="position:absolute;top:1.2rem;right:1.2rem;background:#0077b6;color:#fff;padding:0.3rem 0.9rem;border-radius:1rem;font-size:0.95rem;font-weight:600;letter-spacing:0.5px;">Developer</span>
+            <img src="Images/internship pic.jpg" alt="Samuel Ndive" style="width:110px;height:110px;object-fit:cover;border-radius:50%;border:4px solid #e3f0fa;box-shadow:0 2px 16px rgba(0,119,182,0.13);margin-bottom:1.2rem;">
+            <h3 style="margin:0 0 0.5rem 0;font-family:'Playfair Display',serif;font-size:1.35rem;color:#0077b6;">Samuel Ndive</h3>
+            <span style="color:#888;font-size:1rem;margin-bottom:1rem;">Full Stack Developer</span>
+            <div style="font-size:1.08rem;color:#444;text-align:center;">
+              <p style="margin-bottom:0.7rem;">👨‍💻 <b>Python</b> & Cloud Computing Enthusiast</p>
+              <p style="margin-bottom:0.7rem;">🎓 BSc Computer Science (Licensed)</p>
+              <p style="margin-bottom:0.7rem;">🎂 Born July 2004</p>
+              <p style="margin-bottom:0.7rem;">🚀 Ambitious, always learning, building for tomorrow</p>
+            </div>
+            <div style="margin-top:1.2rem;display:flex;gap:0.7rem;">
+              <a href="mailto:Wandeusamuel506@gmail.com" title="Email" style="color:#0077b6;font-size:1.3rem;"><i class="fas fa-envelope"></i></a>
+              <a href="https://github.com/samtech-11" target="_blank" title="GitHub" style="color:#0077b6;font-size:1.3rem;">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://www.facebook.com/share/15K4N7U3bA/?mibextid=wwXIfr" target="_blank" title="Facebook" style="color:#0077b6;font-size:1.3rem;"><i class="fab fa-facebook"></i></a>
+              <a href="https://instagram.com/yourinstagram" target="_blank" title="Instagram" style="color:#0077b6;font-size:1.3rem;"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div style="margin-top:1.5rem;">
+              <span style="background:#e3f0fa;color:#0077b6;padding:0.4rem 1rem;border-radius:1rem;font-size:0.98rem;font-weight:500;">Available for freelance & collaborations</span>
+            </div>
+          </div>
+          <!-- About Content -->
+          <div class="about-content" style="flex:2;min-width:260px;">
+            <h2 style="font-family:'Playfair Display',serif;font-size:2.1rem;color:#222;margin-bottom:1.2rem;text-align:right;">About the Developer</h2>
+            <p style="font-size:1.18rem;color:#333;line-height:1.7;text-align:right;">
+              <b>Hi, I’m Samuel Ndive</b> — a passionate, creative, and detail-oriented <b>Full Stack Developer</b> with a strong foundation in <b>Python</b>, <b>PHP</b>, <b>JavaScript</b>, <b>HTML</b>, and <b>CSS</b>. I specialize in building robust backend systems and seamless user experiences, leveraging the latest technologies to deliver scalable, secure, and high-performing solutions.<br><br>
+              With a licensed BSc in Computer Science and a deep interest in cloud computing, I thrive on solving real-world problems, collaborating with forward-thinking teams, and driving innovation in every project. My journey is fueled by curiosity, ambition, and a vision to make a global impact in tech.<br><br>
+              <span style="color:#0077b6;font-weight:600;">Let’s build something extraordinary together!</span>
+            </p>
+            <ul style="list-style:none;padding:0;margin:1.5rem 0 0 0;text-align:right;">
+              <li style="margin-bottom:0.7rem;"><i class="fas fa-check-circle" style="color:#0077b6;margin-right:0.5rem;"></i> Full Stack Web & Cloud Solutions</li>
+              <li style="margin-bottom:0.7rem;"><i class="fas fa-check-circle" style="color:#0077b6;margin-right:0.5rem;"></i> Modern, scalable, and secure apps</li>
+              <li style="margin-bottom:0.7rem;"><i class="fas fa-check-circle" style="color:#0077b6;margin-right:0.5rem;"></i> Open to freelance, remote, and team projects</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container section-content">
+                <img src="images/happy.jpg" alt="About SamTech Digital Agency">
+                <div>
+                    <h2 style="font-family:'Playfair Display',serif;font-size:2rem;color:#0077b6;margin-bottom:1rem;">
+                        About <span style="color:#222;">SamTech Digital Agency</span>
+                    </h2>
+                    <p style="font-size:1.15rem; color:#2d3a4b; line-height:1.8; margin-bottom:1.2rem;">
+                        <b>SamTech Digital Agency</b> is a forward-thinking partner for businesses ready to thrive in the digital era.<br>
+                        <span style="color:#0077b6;">Our team blends creativity, technical mastery, and strategic vision</span> to deliver solutions that drive measurable growth.<br>
+                        We believe in building lasting partnerships and empowering our clients to achieve sustainable success through <b>innovation</b> and <b>excellence</b>.
+                    </p>
+                    <ul style="list-style:none; padding:0; margin:0;">
+                        <li style="margin-bottom:0.7rem;">
+                            <i class="fas fa-check-circle" style="color:#0077b6; margin-right:0.5rem;"></i>
+                            Creative & technical expertise
+                        </li>
+                        <li style="margin-bottom:0.7rem;">
+                            <i class="fas fa-check-circle" style="color:#0077b6; margin-right:0.5rem;"></i>
+                            Measurable, real-world results
+                        </li>
+                        <li style="margin-bottom:0.7rem;">
+                            <i class="fas fa-check-circle" style="color:#0077b6; margin-right:0.5rem;"></i>
+                            Long-term client partnerships
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle" style="color:#0077b6; margin-right:0.5rem;"></i>
+                            Innovation & excellence at every step
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="section">
+          <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-list">
+              <a href="web-development.html" class="service-card">
+                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="Web Development">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Web Development</h3>
+                <p>Modern, responsive websites and web apps tailored to your brand and business goals.</p>
+              </a>
+              <a href="digital-marketing.html" class="service-card">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Digital Marketing">
+                <i class="fas fa-bullhorn"></i>
+                <h3>Digital Marketing</h3>
+                <p>Expand your reach and connect with new customers through data-driven marketing strategies.</p>
+              </a>
+              <a href="business-consulting.html" class="service-card">
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Business Consulting">
+                <i class="fas fa-chart-line"></i>
+                <h3>Business Consulting</h3>
+                <p>Insightful advice and support to help your business thrive in a competitive digital landscape.</p>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="section contact-section" style="background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%); box-shadow: 0 8px 32px rgba(0,119,182,0.08); border: none;">
+            <div class="container section-content" style="align-items: flex-start; gap: 3rem;">
+                <!-- Contact Info Left -->
+                <div style="flex:1 1 320px; max-width: 400px; background: #fff; border-radius: 1rem; box-shadow: 0 4px 24px rgba(0,119,182,0.10); padding: 2rem 1.5rem; min-width: 260px;">
+                    <h2 style="color:#0077b6; margin-top:0;">Contact Information</h2>
+                    <ul style="list-style:none; padding:0; margin:1.5rem 0;">
+                        <li style="margin-bottom:1.2rem; font-size:1.08rem;">
+                            <i class="fas fa-map-marker-alt" style="color:#0077b6; margin-right:0.7rem; font-size:1.2rem;"></i>
+                            Houston, Texas  US
+                        </li>
+                        <li style="margin-bottom:1.2rem; font-size:1.08rem;">
+                            <i class="fas fa-phone-alt" style="color:#0077b6; margin-right:0.7rem; font-size:1.2rem;"></i>
+                            +1 614-905-2759
+                        </li>
+                        <li style="margin-bottom:1.2rem; font-size:1.08rem;">
+                            <i class="fas fa-envelope" style="color:#0077b6; margin-right:0.7rem; font-size:1.2rem;"></i>
+                            Wandeusamuel506@gmail.com
+                        </li>
+                        <li style="font-size:1.08rem;">
+                            <i class="fas fa-globe" style="color:#0077b6; margin-right:0.7rem; font-size:1.2rem;"></i>
+                           Wandeusamuel506@gmail.com
+                        </li>
+                    </ul>
+                    <div style="margin-top:2rem; font-size:1.05rem;">
+                        <strong>Business Hours:</strong><br>
+                        Mon - Fri: 9:00am - 6:00pm<br>
+                        Sat: 10:00am - 2:00pm
+                    </div>
+                    <div style="margin-top:2rem;">
+                        <a href="mailto:info@doradigital.com" class="cta-btn" style="background:#0077b6; color:#fff; padding:0.7rem 1.5rem; border-radius:2rem; font-size:1rem; text-decoration:none; display:inline-block; margin-top:0.5rem;">Email Us Directly</a>
+                    </div>
+                </div>
+                <!-- Contact Form Right -->
+                <form style="flex:1 1 350px; max-width:500px; margin-left:auto; background: #fff; border-radius: 1rem; box-shadow: 0 4px 24px rgba(0,119,182,0.10); padding: 2rem 1.5rem;">
+                    <h2 style="color:#0077b6; margin-top:0;">Send Us a Message</h2>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-btn" style="width:100%;">Send Message</button>
+                </form>
+            </div>
+            <div id="contact-success" style="display:none; text-align:center; margin:2rem 0;">
+              <div style="display:inline-block; padding:2rem 3rem; background:#e6f9ec; border-radius:1rem; box-shadow:0 2px 12px rgba(0,0,0,0.07);">
+                <div style="font-size:3rem; color:#2ecc40; margin-bottom:1rem;">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+                <h2 style="color:#222; font-weight:700; margin-bottom:0.5rem;">Thank you for contacting us!</h2>
+                <p style="color:#222; font-size:1.1rem;">We have received your message and will respond soon.</p>
+              </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 SamTech Digital Agency. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script>
+document.querySelector('.contact-section form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim()
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, message })
+    });
+
+    const result = await response.json();
+    if (response.ok) {
+        document.getElementById('contact-success').style.display = 'block';
+        setTimeout(() => {
+            document.getElementById('contact-success').style.display = 'none';
+        }, 5000);
+        this.reset();
+    } else {
+        alert(result.error || 'Something went wrong. Please try again.');
+    }
+});
+</script>
+</body>
+</html>
