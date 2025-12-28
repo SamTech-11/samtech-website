@@ -1,8 +1,16 @@
 Flask
 flask-cors
+<<<<<<< HEAD
+=======
+flask-mail
+>>>>>>> 51b8e06952be1085b15bd11bb6d9e8753e57fbe5
 flask-sqlalchemy
 python-dotenv
 flask-login
 twilio
+<<<<<<< HEAD
 gunicorn
 requests
+=======
+gunicorn
+>>>>>>> 51b8e06952be1085b15bd11bb6d9e8753e57fbe5

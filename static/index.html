@@ -462,7 +462,10 @@ document.querySelector('.contact-section form').addEventListener('submit', async
     const message = document.getElementById('message').value.trim();
 
     const response = await fetch('http://localhost:5000/api/contact', {
+<<<<<<< HEAD
     const response = await fetch('/api/contact', {
+=======
+>>>>>>> 51b8e06952be1085b15bd11bb6d9e8753e57fbe5
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, message })

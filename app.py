@@ -1,5 +1,9 @@
 from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
+<<<<<<< HEAD
+=======
+from flask_mail import Mail, Message
+>>>>>>> 51b8e06952be1085b15bd11bb6d9e8753e57fbe5
 from flask_sqlalchemy import SQLAlchemy
 from dotenv import load_dotenv
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
@@ -7,7 +11,10 @@ from flask import render_template_string, redirect, url_for, session
 from twilio.rest import Client
 import os
 import re
+<<<<<<< HEAD
 import requests
+=======
+>>>>>>> 51b8e06952be1085b15bd11bb6d9e8753e57fbe5
 
 load_dotenv()
 
@@ -15,6 +22,17 @@ app = Flask(__name__)
 app.secret_key = os.getenv('SECRET_KEY', 'dev-secret-key')  # Use a strong secret in production!
 CORS(app)
 
+<<<<<<< HEAD
+=======
+# Configure Flask-Mail
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME')
+app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD')
+app.config['MAIL_DEFAULT_SENDER'] = os.getenv('MAIL_DEFAULT_SENDER')
+
+>>>>>>> 51b8e06952be1085b15bd11bb6d9e8753e57fbe5
 # Configure Flask-SQLAlchemy
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///contacts.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -24,6 +42,10 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'admin_login'
 
+<<<<<<< HEAD
+=======
+mail = Mail(app)
+>>>>>>> 51b8e06952be1085b15bd11bb6d9e8753e57fbe5
 db = SQLAlchemy(app)
 
 # Define the Contact model
@@ -42,6 +64,7 @@ class AdminUser(UserMixin):
 def is_valid_email(email):
     return re.match(r"[^@]+@[^@]+\.[^@]+", email)
 
+<<<<<<< HEAD
 def send_telegram_message(bot_message):
     """Sends a message to a Telegram chat using the bot API."""
     bot_token = os.getenv('TELEGRAM_BOT_TOKEN')
@@ -64,6 +87,8 @@ def send_telegram_message(bot_message):
         print(f"Error sending Telegram message: {e}")
         return False
 
+=======
+>>>>>>> 51b8e06952be1085b15bd11bb6d9e8753e57fbe5
 @login_manager.user_loader
 def load_user(user_id):
     if user_id == "1":
@@ -90,9 +115,20 @@ def contact():
         db.session.add(new_contact)
         db.session.commit()
 
+<<<<<<< HEAD
         # Send Telegram message
         telegram_body = f"New Contact Form Submission:\n*Name*: {name}\n*Email*: {email}\n*Message*:\n{message}"
         send_telegram_message(telegram_body)
+=======
+        # Send email as before
+        msg = Message(
+            subject=f'New Contact Form Submission from {name}',
+            recipients=[os.getenv('MAIL_USERNAME')],
+            body=f'Name: {name}\nEmail: {email}\n\nMessage:\n{message}'
+        )
+        mail.send(msg)
+
+>>>>>>> 51b8e06952be1085b15bd11bb6d9e8753e57fbe5
         # Send WhatsApp message via Twilio
         account_sid = os.getenv("TWILIO_ACCOUNT_SID")
         auth_token = os.getenv("TWILIO_AUTH_TOKEN")
