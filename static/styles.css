@@ -1,0 +1,241 @@
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    background: #f8f9fa;
+    color: #222;
+}
+
+header {
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 0;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #2d3a4b;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #2d3a4b;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: #0077b6;
+}
+
+.hero {
+    background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
+    padding: 3rem 0 2rem 0;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.hero-content > div {
+    flex: 1 1 350px;
+}
+
+.hero img {
+    width: 400px;
+    max-width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #22223b;
+}
+
+.cta-btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.8rem 2rem;
+    background: #0077b6;
+    color: #fff;
+    border: none;
+    border-radius: 2rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(0,119,182,0.08);
+}
+
+.cta-btn:hover {
+    background: #023e8a;
+}
+
+.section {
+    padding: 3rem 0;
+    background: #fff;
+    margin-top: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.03);
+}
+
+.section-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.section-content img {
+    width: 350px;
+    max-width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+.section-content > div {
+    flex: 1 1 350px;
+}
+
+.services-list {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.service-card {
+    background: #f1f5fa;
+    border-radius: 1rem;
+    padding: 2rem 1.5rem;
+    flex: 1 1 250px;
+    min-width: 220px;
+    max-width: 320px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.service-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(0,119,182,0.10);
+}
+
+.service-card i {
+    font-size: 2.5rem;
+    color: #0077b6;
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    margin: 0.5rem 0 1rem 0;
+    font-family: 'Playfair Display', serif;
+    color: #22223b;
+}
+
+.contact-section form {
+    max-width: 500px;
+    margin: 2rem auto 0 auto;
+    background: #f1f5fa;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #bcd0e5;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-family: inherit;
+    background: #fff;
+    resize: vertical;
+}
+
+textarea {
+    min-height: 100px;
+}
+
+footer {
+    background: #22223b;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+    border-radius: 1rem 1rem 0 0;
+}
+
+@media (max-width: 900px) {
+    .hero-content, .section-content, .services-list {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .services-list {
+        align-items: stretch;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 98%;
+        padding: 0 0.5rem;
+    }
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .section {
+        padding: 1.5rem 0.5rem;
+    }
+    .service-card {
+        padding: 1.2rem 0.7rem;
+    }
+}
